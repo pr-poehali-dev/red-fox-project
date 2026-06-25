@@ -55,12 +55,12 @@ interface StrategyCardProps {
 
 const tagLabels: Record<StrategyCardProps["tag"], string> = {
   Priority: "Приоритет",
-  Risk: "Риски",
-  Tax: "Налоги",
-  Income: "Доход",
-  Estate: "Наследие",
-  Health: "Здоровье",
-  Implementation: "Реализация",
+  Risk: "Качество",
+  Tax: "Логистика",
+  Income: "Выгода",
+  Estate: "Ассортимент",
+  Health: "Безопасность",
+  Implementation: "Поставка",
 }
 
 function StrategyCard({ id, icon, title, valueProp, what, metrics, sources, tag }: StrategyCardProps) {
@@ -204,10 +204,10 @@ function TableOfContents() {
   const sections = [
     { id: "team", label: "Команда" },
     { id: "executive-summary", label: "Резюме" },
-    { id: "service-options", label: "Варианты услуг" },
-    { id: "recommendations", label: "Рекомендации" },
-    { id: "fees", label: "Стоимость" },
-    { id: "onboarding", label: "Онбординг" },
+    { id: "service-options", label: "Форматы сотрудничества" },
+    { id: "recommendations", label: "Продукция" },
+    { id: "fees", label: "Цены и условия" },
+    { id: "onboarding", label: "Старт сотрудничества" },
     { id: "next-steps", label: "Следующие шаги" },
   ]
 
@@ -299,214 +299,214 @@ interface ServiceItem {
 
 const financialPlanningServices: ServiceCategory[] = [
   {
-    id: "retirement-income",
-    title: "Пенсионное планирование и доход",
+    id: "assortment",
+    title: "Ассортимент свежемороженой продукции",
     color: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
     icon: <Clock className="h-6 w-6" />,
     services: [
       {
-        service: "Анализ пенсионных накоплений",
-        details: "Прогнозы, симуляции Монте-Карло для пенсионных сценариев",
+        service: "Замороженные ягоды",
+        details: "Клубника, малина, черника, смородина, вишня — собраны в сезон и заморожены в течение нескольких часов",
       },
       {
-        service: "Оптимизация пенсии",
-        details: "Оптимальные стратегии выбора пенсии (единовременная выплата или аннуитет)",
+        service: "Замороженные овощи",
+        details: "Брокколи, цветная капуста, зелёный горошек, кукуруза, стручковая фасоль, перец",
       },
       {
-        service: "Оптимизация социальных выплат",
-        details: "Стратегии отсрочки и консультации по получению (с акцентом на супруга)",
+        service: "Овощные смеси",
+        details: "Готовые смеси для гарниров, супов и вторых блюд: «Мексиканская», «Гавайская», «Паприкаш», «Лечо»",
       },
       {
-        service: "Конвертация в Roth IRA",
-        details: "Стратегические конвертации в Roth IRA",
+        service: "Замороженные грибы",
+        details: "Шампиньоны, лесные грибы, ассорти — очищенные и порционно нарезанные",
       },
       {
-        service: "Анализ разрыва в доходах",
-        details: "Оценка источников пенсионного дохода и управление дефицитом",
+        service: "Полуфабрикаты и заготовки",
+        details: "Картофель фри, овощные котлеты, наггетсы, заправки для борща и рагу",
       },
       {
-        service: "План расходов на переходный период",
-        details: "Разработка стратегии расходования до начала социальных выплат или пенсии",
+        service: "Замороженная зелень",
+        details: "Укроп, петрушка, кинза, шпинат — сохраняют цвет, аромат и витамины после шоковой заморозки",
       },
       {
-        service: "Интеграция медицинских расходов",
-        details: "Включение расходов на медицину в пенсионные прогнозы",
+        service: "Морепродукты",
+        details: "Креветки, морской коктейль, филе рыбы — глубокая заморозка с контролем глазури",
       },
     ],
   },
   {
-    id: "tax-planning",
-    title: "Налоговое планирование и оптимизация",
+    id: "quality-freezing",
+    title: "Контроль качества и шоковая заморозка",
     color: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200",
     icon: <Receipt className="h-6 w-6" />,
     services: [
       {
-        service: "Немедленно активировать взносы в 401(k)",
-        details: "Начать отчисления до налогов для снижения облагаемого дохода 2025 и формирования пенсионных накоплений",
+        service: "Технология шоковой заморозки (IQF)",
+        details: "Раздельная заморозка при -35 °C сохраняет структуру, вкус и питательную ценность продукта",
         isPersonalized: true,
       },
       {
-        service: "Открыть Backdoor Roth IRA (с 2026)",
-        details: "Внедрить ежегодные конвертации Roth для формирования необлагаемых пенсионных активов",
+        service: "Входной контроль сырья",
+        details: "Каждая партия сырья проходит лабораторную проверку по органолептике и микробиологии",
         isPersonalized: true,
       },
       {
-        service: "Согласовать квартальные налоговые платежи 2025 с бухгалтером",
-        details: "Обеспечить корректные квартальные платежи для избежания штрафов и оптимизации денежного потока",
+        service: "Непрерывный холодовой цикл",
+        details: "Контроль температуры на всех этапах: от поля до отгрузки партнёру без размораживания",
         isPersonalized: true,
       },
       {
-        service: "Открыть Donor-Advised Fund (DAF) для благотворительности",
-        details: "Создать налогово-эффективный инструмент благотворительности с немедленным вычетом и гибким сроком",
+        service: "Система менеджмента ХАССП (HACCP)",
+        details: "Производство построено на принципах ХАССП с контролем критических точек безопасности",
         isPersonalized: true,
       },
       {
-        service: "Реструктурировать 50 млн ₽ наличных в налогово-эффективные инструменты",
-        details: "Разместить избыточную наличность в муниципальные облигации и другие налогово-эффективные инструменты",
+        service: "Прослеживаемость партий",
+        details: "По номеру партии можно отследить происхождение сырья, дату и параметры заморозки",
         isPersonalized: true,
       },
       {
-        service: "Интегрировать портфель муниципальных облигаций",
-        details: "Добавить поток необлагаемого дохода для снижения общей налоговой нагрузки в годы высокого дохода",
+        service: "Лабораторный контроль готовой продукции",
+        details: "Регулярные проверки готовой продукции на соответствие ГОСТ и ТУ перед отгрузкой",
         isPersonalized: true,
       },
     ],
   },
   {
-    id: "cash-flow-budget",
-    title: "Управление денежными потоками и бюджетом",
+    id: "logistics-storage",
+    title: "Логистика и хранение",
     color: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
     icon: <Wallet className="h-6 w-6" />,
     services: [
       {
-        service: "Определить базовую финансовую подушку",
-        details: "Установить оптимальный размер и расположение резервного фонда для нерегулярного дохода",
+        service: "Доставка рефрижераторным транспортом",
+        details: "Собственный и партнёрский автопарк с поддержанием температуры -18 °C на всём маршруте",
         isPersonalized: true,
       },
       {
-        service: "Создать систему распределения крупных поступлений",
-        details: "Систематический процесс распределения крупных комиссионных по целям",
+        service: "Складские мощности с режимом -18 °C",
+        details: "Низкотемпературные склады позволяют формировать страховой запас под объёмы партнёра",
         isPersonalized: true,
       },
       {
-        service: "Вести 12-месячную карту расходов",
-        details: "Отслеживать и прогнозировать расходы для управления переменным доходом и поиска оптимизаций",
+        service: "Гибкий график отгрузок",
+        details: "Согласование графика поставок под вашу логистику и оборачиваемость склада",
         isPersonalized: true,
       },
     ],
   },
   {
-    id: "investment-planning",
-    title: "Инвестиционное планирование и управление",
+    id: "packaging",
+    title: "Упаковка и фасовка",
     color: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
     icon: <BarChart3 className="h-6 w-6" />,
     services: [
       {
-        service: "Реализовать 36-месячный план диверсификации RSU Palantir",
-        details: "Систематическая диверсификация концентрированной позиции в акциях за три года",
+        service: "Потребительская фасовка 300–1000 г",
+        details: "Розничная упаковка с печатью под полку магазина и удобными порциями",
         isPersonalized: true,
       },
       {
-        service: "Диверсификация от риска одной акции",
-        details: "Снизить концентрационный риск с учётом налоговых последствий, сохраняя потенциал роста",
+        service: "Весовая упаковка для HoReCa",
+        details: "Фасовка 2,5–10 кг для ресторанов, столовых и пищевых производств",
         isPersonalized: true,
       },
       {
-        service: "Внедрить автоматизированную инвестиционную политику (IPS)",
-        details: "Формализовать инвестиционную стратегию, распределение активов и правила ребалансировки",
+        service: "Брендирование и Private Label",
+        details: "Выпуск продукции под торговой маркой партнёра с индивидуальным дизайном упаковки",
         isPersonalized: true,
       },
       {
-        service: "Смоделировать сценарий ранней финансовой независимости (50-55 лет)",
-        details: "Спрогнозировать готовность к пенсии и выявить пробелы для опции раннего выхода",
+        service: "Транспортная упаковка и паллетирование",
+        details: "Гофрокороба и паллеты, оптимизированные под загрузку фуры и складское хранение",
         isPersonalized: true,
       },
     ],
   },
   {
-    id: "risk-insurance",
-    title: "Управление рисками и страхование",
+    id: "wholesale-terms",
+    title: "Условия оптовых поставок",
     color: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
     icon: <Shield className="h-6 w-6" />,
     services: [
       {
-        service: "Комплексный обзор страхования",
-        details: "Оценка потребностей в страховании жизни, нетрудоспособности, зонтичном и других видах для текущей ситуации",
+        service: "Скидки за объём",
+        details: "Прогрессивная шкала скидок при росте объёма заказа и заключении долгосрочного контракта",
         isPersonalized: true,
       },
       {
-        service: "Защита концентрированных активов в переходный период",
-        details: "Рассмотреть стратегии хеджирования или страховые решения на период диверсификации акций",
+        service: "Фиксация цены по контракту",
+        details: "Возможность зафиксировать отпускные цены на сезон для предсказуемости закупок",
         isPersonalized: true,
       },
     ],
   },
   {
-    id: "estate-legacy",
-    title: "Наследственное планирование",
+    id: "certification-safety",
+    title: "Сертификация и безопасность продукции",
     color: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
     icon: <FileCheck className="h-6 w-6" />,
     services: [
       {
-        service: "Оформить базовые документы (2025)",
-        details: "Создать завещание, медицинскую доверенность, финансовую доверенность и назначения бенефициаров",
+        service: "Декларации соответствия ТР ТС",
+        details: "Вся продукция сопровождается декларациями соответствия техническим регламентам ЕАЭС",
         isPersonalized: true,
       },
       {
-        service: "Интегрировать DAF и будущие благотворительные цели",
-        details: "Согласовать стратегию благотворительности с общим наследственным планированием",
+        service: "Соответствие ГОСТ и ТУ",
+        details: "Производство по действующим ГОСТ и собственным техническим условиям с протоколами испытаний",
         isPersonalized: true,
       },
     ],
   },
   {
-    id: "education-college",
-    title: "Образовательное планирование",
+    id: "service-support",
+    title: "Сервис и поддержка партнёров",
     color: "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200",
     icon: <GraduationCap className="h-6 w-6" />,
     services: [
       {
-        service: "Планы 529 и образовательные фонды",
-        details: "Настройка и стратегии финансирования (налогово-эффективные взносы)",
+        service: "Бесплатные образцы продукции",
+        details: "Предоставление образцов ассортимента для дегустации и оценки качества перед заказом",
       },
       {
-        service: "Финансовая грамотность для детей",
-        details: "Введение в бюджетирование и основы инвестирования",
+        service: "Персональный менеджер",
+        details: "Закреплённый менеджер сопровождает партнёра по заявкам, документам и поставкам",
       },
     ],
   },
   {
-    id: "business-entrepreneurial",
-    title: "Бизнес-планирование",
+    id: "production-capacity",
+    title: "Производственные мощности",
     color: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
     icon: <Building2 className="h-6 w-6" />,
     services: [
       {
-        service: "Создать резерв для будущих проектов",
-        details: "Выделить капитал для потенциальных стартапов или бизнес-возможностей",
+        service: "Стабильные объёмы под крупные сети",
+        details: "Производственные линии обеспечивают регулярные поставки без перебоев в высокий сезон",
         isPersonalized: true,
       },
       {
-        service: "Оценить структуры для будущего стартапа",
-        details: "Анализ ООО, S-Corp и других структур для будущей предпринимательской деятельности",
+        service: "Резерв мощности под рост заказов",
+        details: "Возможность масштабировать объём поставок под развитие сети партнёра",
         isPersonalized: true,
       },
     ],
   },
   {
-    id: "behavioral-emotional",
-    title: "Поведенческая и эмоциональная поддержка",
+    id: "new-products",
+    title: "Разработка новых продуктов",
     color: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
     icon: <Brain className="h-6 w-6" />,
     services: [
       {
-        service: "Формализовать системы принятия решений",
-        details: "Создать систематические процессы для финансовых решений, снижающие сложность и тревожность",
+        service: "Разработка рецептур под запрос",
+        details: "Технологи создают новые смеси и продукты под потребности и целевую аудиторию партнёра",
         isPersonalized: true,
       },
       {
-        service: "Переосмыслить рост капитала как системный процесс",
-        details: "Сместить фокус с краткосрочных выигрышей на долгосрочное накопление и устойчивость",
+        service: "Сезонные и тематические линейки",
+        details: "Запуск ограниченных серий к сезону и праздникам для расширения полки и среднего чека",
         isPersonalized: true,
       },
     ],
@@ -535,98 +535,93 @@ function ExecutiveSummaryCard() {
           )}
         </div>
         <CardDescription className="text-base leading-relaxed">
-          Ваше финансовое положение и ключевые возможности планирования
+          Почему «Барингс» — надёжный партнёр по поставкам свежемороженой продукции
         </CardDescription>
       </CardHeader>
       {isExpanded && (
         <CardContent className="space-y-8">
           <div className="bg-primary/5 p-6 rounded-lg border-l-4 border-primary">
             <p className="text-base text-foreground leading-relaxed">
-              Это ваше первое обращение к профессиональному финансовому планированию, вызванное необходимостью
-              управления концентрированным пакетом акций Palantir и нестабильным комиссионным доходом. Ваша финансовая
-              база прочна, но быстрый рост доходов и неравномерные денежные потоки создали неопределённость в
-              отношении налоговой оптимизации, сроков диверсификации и долгосрочной структуры капитала. Вы готовы
-              к системному руководству для трансформации сложности в уверенность.
+              «Барингс» — производитель свежемороженой продукции полного цикла: от заготовки сезонного сырья до
+              шоковой заморозки, фасовки и доставки рефрижераторным транспортом. Мы предлагаем оптовым партнёрам
+              стабильное качество, прозрачные условия и гибкую логистику. Это коммерческое предложение подготовлено,
+              чтобы показать выгоду долгосрочного сотрудничества: расширение ассортимента вашей полки, надёжные
+              объёмы поставок и контроль качества на каждом этапе.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-6">
-              <h4 className="font-semibold text-foreground text-lg">Где вы сейчас</h4>
+              <h4 className="font-semibold text-foreground text-lg">Почему «Барингс»</h4>
               <ul className="space-y-4 text-base text-muted-foreground">
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    Вы руководитель корпоративных продаж Palantir с доходом ~150 млн ₽ за 2025 год (оклад 15 млн ₽,
-                    комиссионные ~110 млн ₽, RSU 25,3 млн ₽)
+                    Собственное производство полного цикла: замороженные ягоды, овощи, овощные смеси, грибы,
+                    зелень, полуфабрикаты и морепродукты под маркой «Барингс»
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    У вас ~100 млн ₽ ликвидного капитала: 50 млн ₽ на высокодоходном счёте (Amex), 31,8 млн ₽ в акциях Palantir
-                    и ~20 млн ₽ в ETF
+                    Технология шоковой заморозки (IQF) при -35 °C сохраняет вкус, цвет, форму и витамины продукта
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    Вы арендуете жильё в Нолите за 380 000 ₽/месяц и рассматриваете покупку в Манхэттене или
-                    Бруклине (бюджет 100-200 млн ₽)
+                    Непрерывный холодовой цикл и доставка рефрижераторами с поддержанием -18 °C на всём маршруте
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    Вы ещё не начали взносы в 401(k); Palantir не делает matching, но полностью покрывает
-                    медицинскую страховку
+                    Система ХАССП, декларации соответствия ТР ТС ЕАЭС, производство по ГОСТ и ТУ с протоколами испытаний
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    У вас нет долгов, кроме текущих остатков по кредитным картам, основной банк - JP Morgan Chase
+                    Гибкая фасовка — от розничной упаковки до весовой для HoReCa, а также производство под Private Label
                   </span>
                 </li>
               </ul>
             </div>
             <div className="space-y-6">
-              <h4 className="font-semibold text-foreground text-lg">На чём мы сфокусируемся вместе</h4>
+              <h4 className="font-semibold text-foreground text-lg">Что мы предлагаем партнёру</h4>
               <ul className="space-y-4 text-base text-muted-foreground">
                 <li className="flex items-start space-x-3">
                   <TrendingUp className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    Мы оптимизируем вашу налоговую ситуацию, смоделировав федеральные и NY/NYC обязательства за 2025
-                    и снизив высокую маржинальную ставку (~49%) через отложенный доход, муниципальные фонды и
-                    стратегические вычеты
+                    Прозрачные оптовые цены в рублях с прогрессивными скидками за объём и возможностью фиксации
+                    цены на сезон по контракту
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <TrendingUp className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    Мы разработаем многолетний план снижения концентрации Palantir с учётом налоговых последствий
-                    и сохранением потенциала роста
+                    Стабильные регулярные поставки без перебоев даже в высокий сезон за счёт резерва
+                    производственных мощностей
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <TrendingUp className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    Мы поможем вам оценить компромиссы аренды vs покупки в NYC, включая альтернативную стоимость,
-                    налоговые льготы и гибкость образа жизни
+                    Бесплатные образцы ассортимента для дегустации и оценки качества перед заключением договора
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <TrendingUp className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    Мы создадим системы для управления нерегулярным комиссионным доходом, автоматизации накоплений
-                    и оптимизации размещения высокодоходной наличности
+                    Персональный менеджер, сопровождающий партнёра по заявкам, документам, графику отгрузок и
+                    решению любых вопросов
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <TrendingUp className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">
-                    Мы разработаем диверсифицированную инвестиционную стратегию, соответствующую вашей толерантности
-                    к риску и будущим целям (семья, предпринимательство, финансовая независимость)
+                    Разработка новых рецептур и сезонных линеек под потребности вашей сети для расширения полки
+                    и роста среднего чека
                   </span>
                 </li>
               </ul>
@@ -661,7 +656,7 @@ function ServiceCategoryCard({ category }: { category: ServiceCategory }) {
               </Badge>
             )}
             <Badge className={`${category.color} text-xs font-semibold flex-shrink-0`}>
-              {category.services.length} услуг
+              {category.services.length} позиций
             </Badge>
             {isExpanded ? (
               <ChevronDown className="h-5 w-5 text-muted-foreground flex-shrink-0" />
@@ -713,28 +708,28 @@ export default function ClientProposal() {
             <div className="flex items-center space-x-3">
               <img
                 src="/images/design-mode/FgXdJj9lQfuwdL2tT3uNYMFNviU.png"
-                alt="Meridian Wealth Partners Logo"
+                alt="Логотип Барингс"
                 className="h-10 w-10 rounded-lg flex-shrink-0 object-cover"
               />
               <div>
                 <h1 className="text-xl sm:text-2xl font-bold text-foreground leading-tight">
-                  Meridian Wealth Partners
+                  Барингс
                 </h1>
-                <p className="text-xs sm:text-sm text-muted-foreground">Ясная стратегия. Надёжное руководство. Реальные результаты.</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">Свежесть в каждой упаковке. Качество заморозки. Надёжные поставки.</p>
               </div>
             </div>
             <div className="text-left sm:text-right space-y-1 w-full sm:w-auto">
               <div className="flex items-center space-x-2 text-xs sm:text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 flex-shrink-0" aria-label="Адрес" />
-                <span>17 Prince St, Rochester, NY 14607</span>
+                <span>г. Краснодар, ул. Уральская, 95</span>
               </div>
               <div className="flex items-center space-x-2 text-xs sm:text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 flex-shrink-0" aria-label="Телефон" />
-                <span>585-504-1616</span>
+                <span>+7 (861) 200-45-67</span>
               </div>
               <div className="flex items-center space-x-2 text-xs sm:text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0" aria-label="Email" />
-                <span>hello@example.com</span>
+                <span>info@barings.ru</span>
               </div>
             </div>
           </div>
@@ -745,19 +740,19 @@ export default function ClientProposal() {
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16">
           <Badge variant="secondary" className="mb-4">
-            Предложение для нового клиента
+            Коммерческое предложение
           </Badge>
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
-            Подготовлено для Шейна Макуильямса
+            Подготовлено для генерального директора
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 text-pretty max-w-2xl mx-auto leading-relaxed">
-            Трансформация концентрированного пакета Palantir и нестабильного дохода в налогово-эффективный
-            диверсифицированный план устойчивого роста
+            Свежемороженая продукция «Барингс» для вашей сети: широкий ассортимент, шоковая заморозка,
+            стабильные объёмы и выгодные условия оптовых поставок
           </p>
           <div className="flex items-center justify-center space-x-4 sm:space-x-8 text-xs sm:text-sm text-muted-foreground">
             <div className="flex items-center space-x-2">
               <Clock className="h-4 w-4" />
-              <span>Дата: 21 октября 2025</span>
+              <span>Дата: 25 июня 2026</span>
             </div>
           </div>
         </div>
@@ -767,33 +762,33 @@ export default function ClientProposal() {
           <CardHeader>
             <CardTitle className="flex items-center space-x-2 text-xl sm:text-2xl">
               <Users className="h-5 w-5 text-primary" />
-              <span>Наша команда</span>
+              <span>Команда «Барингс»</span>
             </CardTitle>
             <CardDescription className="text-base leading-relaxed">
-              Профессионалы, которые будут сопровождать вас на вашем финансовом пути
+              Специалисты, которые обеспечат качество продукции и надёжность поставок для вашего бизнеса
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               <div className="text-center space-y-2">
-                <h4 className="font-semibold text-foreground text-base">Christopher Haigh, CFP</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">Генеральный директор и ведущий планировщик</p>
+                <h4 className="font-semibold text-foreground text-base">Андрей Соколов</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">Генеральный директор</p>
               </div>
               <div className="text-center space-y-2">
-                <h4 className="font-semibold text-foreground text-base">Jack Hills</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">Директор по инвестициям</p>
+                <h4 className="font-semibold text-foreground text-base">Елена Воронцова</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">Главный технолог производства</p>
               </div>
               <div className="text-center space-y-2">
-                <h4 className="font-semibold text-foreground text-base">Gene Thompson, CFP</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">Директор по финансовому планированию</p>
+                <h4 className="font-semibold text-foreground text-base">Дмитрий Лебедев</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">Менеджер по качеству</p>
               </div>
               <div className="text-center space-y-2">
-                <h4 className="font-semibold text-foreground text-base">Stephanie Nemecheck</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">Директор по операциям</p>
+                <h4 className="font-semibold text-foreground text-base">Ольга Никитина</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">Руководитель отдела продаж</p>
               </div>
               <div className="text-center space-y-2">
-                <h4 className="font-semibold text-foreground text-base">Matthew Scott</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">Ассоциат по финансовому планированию</p>
+                <h4 className="font-semibold text-foreground text-base">Сергей Морозов</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">Руководитель логистики</p>
               </div>
             </div>
           </CardContent>
@@ -805,9 +800,9 @@ export default function ClientProposal() {
         {/* Service Model Selection */}
         <Card className="mb-8 sm:mb-12" id="service-options">
           <CardHeader>
-            <CardTitle className="text-xl sm:text-2xl">Выберите подходящий вариант</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl">Выберите формат сотрудничества</CardTitle>
             <CardDescription className="text-base leading-relaxed">
-              Три модели обслуживания, разработанные для различных потребностей и предпочтений клиентов
+              Три модели поставок, разработанные под разные потребности и масштабы вашего бизнеса
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -815,9 +810,9 @@ export default function ClientProposal() {
               {/* Card 1: Asset Management Only */}
               <div className="border rounded-lg p-6 space-y-6">
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-foreground text-lg">Только управление активами</h4>
+                  <h4 className="font-semibold text-foreground text-lg">Разовая закупка</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Дисциплинированный инвестиционный механизм работает в фоновом режиме
+                    Пробная или единичная поставка для оценки качества продукции «Барингс»
                   </p>
                 </div>
                 <div className="space-y-4">
@@ -826,15 +821,15 @@ export default function ClientProposal() {
                     <ul className="text-sm text-muted-foreground space-y-2 leading-relaxed">
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Хотите делегировать без текущего планирования
+                        Хотите протестировать продукцию перед контрактом
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Пенсионеры, упрощающие активы
+                        Небольшие магазины и точки общепита
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Пассивные долгосрочные инвесторы
+                        Сезонные и разовые потребности в объёме
                       </li>
                     </ul>
                   </div>
@@ -843,19 +838,19 @@ export default function ClientProposal() {
                     <ul className="text-sm text-muted-foreground space-y-2 leading-relaxed">
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Недорогие диверсифицированные портфели
+                        Поставка от минимального заказа (1 паллета)
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Прямое индексирование + сбор налоговых убытков
+                        Полный пакет сопроводительных документов
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Ежегодная встреча с директором по инвестициям
+                        Доставка рефрижератором или самовывоз
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Доступ к Right Capital
+                        Стандартный прайс-лист «Барингс»
                       </li>
                     </ul>
                   </div>
@@ -863,7 +858,7 @@ export default function ClientProposal() {
                     <h5 className="text-sm font-semibold text-foreground mb-3">Не включено</h5>
                     <ul className="text-sm text-muted-foreground space-y-2 leading-relaxed">
                       <li className="flex items-start">
-                        <span className="text-red-500 mr-2">x</span>Финансовое планирование
+                        <span className="text-red-500 mr-2">x</span>Скидки за объём и фиксация цены
                       </li>
                     </ul>
                   </div>
@@ -876,9 +871,9 @@ export default function ClientProposal() {
                   РЕКОМЕНДУЕМ
                 </Badge>
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-foreground text-lg">Комплексное управление капиталом</h4>
+                  <h4 className="font-semibold text-foreground text-lg">Регулярные поставки по контракту</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Партнёрство с экспертами на каждом этапе вашего финансового пути
+                    Долгосрочное партнёрство с гарантированными объёмами и лучшими условиями
                   </p>
                 </div>
                 <div className="space-y-4">
@@ -887,15 +882,15 @@ export default function ClientProposal() {
                     <ul className="text-sm text-muted-foreground space-y-2 leading-relaxed">
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Семьи с текущими сложностями
+                        Розничные сети и оптовые базы
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Акционерные компенсации, владельцы бизнеса
+                        Сети ресторанов, столовых и пищевые производства
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Клиенты, ценящие стратегию и структуру
+                        Партнёры, ценящие стабильность и цену
                       </li>
                     </ul>
                   </div>
@@ -904,27 +899,27 @@ export default function ClientProposal() {
                     <ul className="text-sm text-muted-foreground space-y-2 leading-relaxed">
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        2-4 встречи в год, привязанные к жизненным событиям
+                        Регулярные отгрузки по согласованному графику
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Индивидуальные портфели и налоговая стратегия
+                        Прогрессивные скидки за объём и отсрочка платежа
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Планирование наследства, пенсии и передачи капитала
+                        Фиксация цены на сезон по договору
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Специализированное моделирование и координация с другими специалистами
+                        Резерв продукции на складе под ваши объёмы
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Открытый доступ для вопросов по email в течение года
+                        Персональный менеджер и приоритетная отгрузка
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Vault + RightCapital (полный доступ)
+                        Доставка рефрижераторами по всему региону
                       </li>
                     </ul>
                   </div>
@@ -934,8 +929,8 @@ export default function ClientProposal() {
               {/* Card 3: Project-Based Planning */}
               <div className="border rounded-lg p-6 space-y-6">
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-foreground text-lg">Проектное планирование</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Решить одну большую задачу правильно</p>
+                  <h4 className="font-semibold text-foreground text-lg">Эксклюзивное партнёрство (Private Label)</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Продукция под вашей торговой маркой</p>
                 </div>
                 <div className="space-y-4">
                   <div>
@@ -943,11 +938,11 @@ export default function ClientProposal() {
                     <ul className="text-sm text-muted-foreground space-y-2 leading-relaxed">
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Разовые решения в сложных ситуациях
+                        Сети, развивающие собственную торговую марку
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Нужна экспертная проверка, не постоянная поддержка
+                        Дистрибьюторы с собственным брендом
                       </li>
                     </ul>
                   </div>
@@ -956,19 +951,19 @@ export default function ClientProposal() {
                     <ul className="text-sm text-muted-foreground space-y-2 leading-relaxed">
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Чёткий план за 1-3 месяца
+                        Производство под вашим брендом и дизайном
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        90-дневное окно поддержки
+                        Разработка рецептур под вашу аудиторию
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-2 flex-shrink-0" />
-                        Индивидуальные материалы под вас
+                        Эксклюзивные позиции и условия в регионе
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        Временный доступ к ПО для планирования
+                        Выделенные производственные мощности
                       </li>
                     </ul>
                   </div>
@@ -977,19 +972,19 @@ export default function ClientProposal() {
                     <ul className="text-base text-muted-foreground space-y-3 leading-relaxed">
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                        <span className="break-words">Покупка жилья</span>
+                        <span className="break-words">Линейка ягод под маркой сети</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                        <span className="break-words">Покупка, продажа, долгосрочная/краткосрочная аренда</span>
+                        <span className="break-words">Фирменные овощные смеси и гарниры</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                        <span className="break-words">Пенсионное планирование</span>
+                        <span className="break-words">Полуфабрикаты под собственным брендом</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                        <span className="break-words">Планирование крупных поступлений</span>
+                        <span className="break-words">Сезонные и праздничные серии</span>
                       </li>
                     </ul>
                   </div>
@@ -1002,11 +997,11 @@ export default function ClientProposal() {
         {/* Key Recommendations */}
         <div className="mb-8 sm:mb-12" id="recommendations">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 leading-tight">
-            Комплексные услуги финансового планирования
+            Продукция и услуги «Барингс»
           </h2>
           <p className="text-base text-muted-foreground mb-8 leading-relaxed">
-            Наш целостный подход охватывает все аспекты вашей финансовой жизни. Ниже представлены ключевые области
-            услуг, которые помогут вам достичь ваших целей. Нажмите на любую категорию, чтобы увидеть конкретные услуги.
+            Полный цикл от заготовки сырья до доставки на ваш склад. Ниже представлены ключевые категории продукции
+            и услуг «Барингс». Нажмите на любую категорию, чтобы увидеть конкретные позиции.
           </p>
 
           <div className="space-y-6">
@@ -1019,85 +1014,83 @@ export default function ClientProposal() {
         {/* Fee Structure */}
         <Card className="mb-8 sm:mb-12" id="fees">
           <CardHeader>
-            <CardTitle className="text-xl sm:text-2xl">Стоимость инвестиций и планирования</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl">Цены и условия поставок</CardTitle>
             <CardDescription className="text-base leading-relaxed">
-              Наши тарифы продуманно структурированы для отражения ценности наших услуг и не подлежат обсуждению
+              Прозрачное ценообразование в рублях с прогрессивными скидками за объём заказа
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
               <div className="space-y-6">
-                <h4 className="font-semibold text-foreground text-lg">Структура тарифов</h4>
+                <h4 className="font-semibold text-foreground text-lg">Скидки за объём</h4>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-                    <span className="text-sm font-medium">Год 1 (включая онбординг)</span>
-                    <span className="text-sm font-semibold">800 000 ₽</span>
+                    <span className="text-sm font-medium">От 1 до 5 тонн в месяц</span>
+                    <span className="text-sm font-semibold">базовый прайс</span>
                   </div>
                   <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-                    <span className="text-sm font-medium">Год 2+ ежегодная плата</span>
-                    <span className="text-sm font-semibold">550 000 ₽</span>
+                    <span className="text-sm font-medium">От 5 до 20 тонн в месяц</span>
+                    <span className="text-sm font-semibold">скидка 7%</span>
                   </div>
                   <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-                    <span className="text-sm font-medium">Комиссия за управление активами</span>
-                    <span className="text-sm font-semibold">0,90% AUM</span>
+                    <span className="text-sm font-medium">Свыше 20 тонн в месяц</span>
+                    <span className="text-sm font-semibold">скидка до 15%</span>
                   </div>
                 </div>
                 <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    <span className="font-semibold text-foreground">Итого за Год 1:</span> 800 000 ₽ + 0,90% от активов
-                    под управлением
+                    <span className="font-semibold text-foreground">Минимальный заказ:</span> 1 паллета (около 600 кг)
+                    с доставкой по региону
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed mt-2">
-                    <span className="font-semibold text-foreground">Последующие годы:</span> 550 000 ₽ ежегодно
-                    + 0,90% AUM
+                    <span className="font-semibold text-foreground">Отсрочка платежа:</span> до 21 дня для постоянных
+                    партнёров по договору
                   </p>
                 </div>
               </div>
               <div className="space-y-6">
-                <h4 className="font-semibold text-foreground text-lg">График платежей</h4>
+                <h4 className="font-semibold text-foreground text-lg">Условия доставки и оплаты</h4>
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Ваша плата за Год 1 в размере 800 000 ₽ покрывает всё от онбординга до полного первого года
-                  комплексного планирования. Мы выставляем счёт ежеквартально по 200 000 ₽, начиная с момента начала
-                  сотрудничества. Комиссии за управление активами рассчитываются и списываются ежеквартально на основе
-                  баланса вашего счёта.
+                  Доставка осуществляется рефрижераторным транспортом с поддержанием -18 °C на всём маршруте.
+                  По региону доставка бесплатна при заказе от 1 паллеты, межрегиональная — по согласованию.
+                  Оплата по счёту: предоплата для первого заказа, далее возможна отсрочка платежа по договору.
+                  Цены могут быть зафиксированы на сезон при заключении контракта.
                 </p>
                 <a
-                  href="https://invoice.stripe.com/i/acct_1PEwj3K5hxtton4H/live_YWNjdF8xUEV3ajNLNWh4dHRvbjRILF9USEptT1RQTWJJYVNhQzNud3FxczRGdnBGZzRTaENTLDE1MTYxNTQxMw0200n7CPpSAc?s=db"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:info@barings.ru"
                   className="inline-flex items-center justify-center w-full min-h-[48px] text-base font-semibold bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2 transition-colors"
                 >
-                  Оплатить первый взнос (200 000 ₽)
+                  Запросить полный прайс-лист
                 </a>
               </div>
             </div>
 
             <div className="border-t pt-8">
-              <h4 className="font-semibold text-foreground text-lg mb-6">Предлагаемые активы под управление</h4>
+              <h4 className="font-semibold text-foreground text-lg mb-6">Ориентировочные оптовые цены</h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-                  <span className="text-sm font-medium">ETrade TOD</span>
-                  <span className="text-sm font-semibold">29 400 000 ₽</span>
+                  <span className="text-sm font-medium">Замороженные ягоды (ассорти)</span>
+                  <span className="text-sm font-semibold">от 280 ₽/кг</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-                  <span className="text-sm font-medium">Rollover IRA (из старого 401(k))</span>
-                  <span className="text-sm font-semibold">15 300 000 ₽</span>
+                  <span className="text-sm font-medium">Замороженные овощи и смеси</span>
+                  <span className="text-sm font-semibold">от 110 ₽/кг</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
-                  <span className="text-sm font-medium">Roth IRA</span>
-                  <span className="text-sm font-semibold">900 000 ₽</span>
+                  <span className="text-sm font-medium">Замороженные грибы</span>
+                  <span className="text-sm font-semibold">от 190 ₽/кг</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-muted rounded-lg border-2 border-dashed border-primary/30">
-                  <span className="text-sm font-medium">PLTR RSU (обсуждается)</span>
-                  <span className="text-sm font-semibold">32 000 000 ₽</span>
+                  <span className="text-sm font-medium">Морепродукты (обсуждается)</span>
+                  <span className="text-sm font-semibold">от 450 ₽/кг</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-primary/10 rounded-lg border-2 border-primary/40 mt-4">
-                  <span className="text-base font-semibold text-foreground">Всего активов (без PLTR RSU)</span>
-                  <span className="text-base font-bold text-foreground">45 600 000 ₽</span>
+                  <span className="text-base font-semibold text-foreground">Средний чек поставки (1 паллета)</span>
+                  <span className="text-base font-bold text-foreground">от 120 000 ₽</span>
                 </div>
                 <p className="text-xs text-muted-foreground italic mt-4 leading-relaxed">
-                  Примечание: PLTR RSU показаны отдельно, поскольку управление этими активами будет определено на основе
-                  ваших предпочтений и наших обсуждений стратегии диверсификации акций.
+                  Примечание: цены ориентировочные и зависят от объёма, ассортимента, вида фасовки и сезона.
+                  Точные цены и индивидуальные условия фиксируются в спецификации к договору.
                 </p>
               </div>
             </div>
@@ -1107,9 +1100,9 @@ export default function ClientProposal() {
         {/* Onboarding Process */}
         <Card className="mb-8 sm:mb-12" id="onboarding">
           <CardHeader>
-            <CardTitle className="text-xl sm:text-2xl">Ваш путь онбординга</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl">Как начать поставки</CardTitle>
             <CardDescription className="text-base leading-relaxed">
-              Продуманный процесс, который превращает сложность в ясность под руководством экспертов, знающих вашу историю.
+              Простой и понятный процесс — от первой заявки до регулярных поставок продукции «Барингс».
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -1125,31 +1118,31 @@ export default function ClientProposal() {
                   <div className="flex-1 space-y-3">
                     <div className="flex items-center gap-3">
                       <Badge className="bg-primary text-primary-foreground font-semibold">Этап 1</Badge>
-                      <h4 className="font-semibold text-foreground text-lg">Фундамент и диагностика</h4>
+                      <h4 className="font-semibold text-foreground text-lg">Заявка и подбор ассортимента</h4>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Мы организуем ваши счета, соберём финансовые данные и создадим основу для вашего
-                      персонализированного плана.
+                      Вы оставляете заявку, мы уточняем потребности, объёмы и формат фасовки и подбираем
+                      ассортимент продукции под ваш бизнес.
                     </p>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="font-medium">Christopher Haigh</span>
+                        <span className="font-medium">Ольга Никитина</span>
                       </div>
                       <span>-</span>
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="font-medium">Stephanie Nemecheck</span>
+                        <span className="font-medium">отдел продаж</span>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Открытие и привязка счетов</span>
+                        <span className="text-sm text-muted-foreground">Уточнение объёмов и ассортимента</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Сбор финансовых данных и документов</span>
+                        <span className="text-sm text-muted-foreground">Подготовка коммерческого предложения</span>
                       </div>
                     </div>
                   </div>
@@ -1169,31 +1162,31 @@ export default function ClientProposal() {
                   <div className="flex-1 space-y-3">
                     <div className="flex items-center gap-3">
                       <Badge className="bg-primary text-primary-foreground font-semibold">Этап 2</Badge>
-                      <h4 className="font-semibold text-foreground text-lg">Разработка инвестиционной стратегии</h4>
+                      <h4 className="font-semibold text-foreground text-lg">Образцы и дегустация</h4>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Мы создадим вашу персонализированную инвестиционную стратегию, оптимизируем размещение активов
-                      и встроим налоговую эффективность с первого дня.
+                      Мы бесплатно предоставляем образцы выбранного ассортимента, чтобы вы оценили качество,
+                      вкус и внешний вид продукции «Барингс» перед заключением договора.
                     </p>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="font-medium">Jack Hills</span>
+                        <span className="font-medium">Елена Воронцова</span>
                       </div>
-                      <span className="text-xs">Директор по инвестициям</span>
+                      <span className="text-xs">Главный технолог</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Разработка стратегии распределения активов</span>
+                        <span className="text-sm text-muted-foreground">Передача образцов продукции</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Внедрение сбора налоговых убытков</span>
+                        <span className="text-sm text-muted-foreground">Предоставление сертификатов и деклараций</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Оптимизация размещения активов по счетам</span>
+                        <span className="text-sm text-muted-foreground">Согласование объёмов и фасовки</span>
                       </div>
                     </div>
                   </div>
@@ -1213,27 +1206,27 @@ export default function ClientProposal() {
                   <div className="flex-1 space-y-3">
                     <div className="flex items-center gap-3">
                       <Badge className="bg-primary text-primary-foreground font-semibold">Этап 3</Badge>
-                      <h4 className="font-semibold text-foreground text-lg">Налоговое и наследственное планирование</h4>
+                      <h4 className="font-semibold text-foreground text-lg">Договор и условия поставок</h4>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Мы доработаем вашу налоговую стратегию, создадим основы наследственного планирования и обеспечим
-                      защиту и целенаправленную структуру вашего капитала.
+                      Мы заключаем договор поставки, фиксируем цены, объёмы, график отгрузок и условия оплаты
+                      в спецификации — всё прозрачно и зафиксировано документально.
                     </p>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="font-medium">Gene Thompson</span>
+                        <span className="font-medium">Дмитрий Лебедев</span>
                       </div>
-                      <span className="text-xs">Директор по финансовому планированию</span>
+                      <span className="text-xs">Менеджер по качеству</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Построение комплексной налоговой стратегии</span>
+                        <span className="text-sm text-muted-foreground">Заключение договора поставки</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Руководство по основам наследственного планирования</span>
+                        <span className="text-sm text-muted-foreground">Фиксация цен и графика отгрузок</span>
                       </div>
                     </div>
                   </div>
@@ -1253,26 +1246,26 @@ export default function ClientProposal() {
                   <div className="flex-1 space-y-3">
                     <div className="flex items-center gap-3">
                       <Badge className="bg-primary text-primary-foreground font-semibold">Этап 4</Badge>
-                      <h4 className="font-semibold text-foreground text-lg">Презентация плана и реализация</h4>
+                      <h4 className="font-semibold text-foreground text-lg">Первая поставка и сопровождение</h4>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Мы представим ваш полный финансовый план, разберём каждую рекомендацию и составим персональную
-                      дорожную карту реализации.
+                      Мы отгружаем первую партию рефрижератором с соблюдением холодового цикла и закрепляем за вами
+                      персонального менеджера для дальнейших регулярных поставок.
                     </p>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-primary"></div>
-                        <span className="font-medium">Обзор всей командой</span>
+                        <span className="font-medium">Сергей Морозов — логистика</span>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Обзор финализированного плана</span>
+                        <span className="text-sm text-muted-foreground">Отгрузка первой партии рефрижератором</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">Составление дорожной карты реализации</span>
+                        <span className="text-sm text-muted-foreground">Закрепление персонального менеджера</span>
                       </div>
                     </div>
                   </div>
@@ -1290,8 +1283,8 @@ export default function ClientProposal() {
                   <div className="space-y-2">
                     <h4 className="font-semibold text-foreground text-lg">Что вы получите в итоге</h4>
                     <p className="text-base text-muted-foreground leading-relaxed">
-                      После онбординга у вас будет полный финансовый план, команда, знающая вашу историю, и ясный путь
-                      вперёд - никакой перегрузки, только уверенность.
+                      Налаженный канал поставок качественной свежемороженой продукции, стабильные объёмы, выгодные
+                      цены и персонального менеджера — никаких перебоев, только надёжное партнёрство.
                     </p>
                   </div>
                 </div>
@@ -1305,34 +1298,34 @@ export default function ClientProposal() {
           <CardHeader>
             <CardTitle className="text-xl sm:text-2xl">Следующие шаги</CardTitle>
             <CardDescription className="text-base leading-relaxed">
-              Готовы оптимизировать ваше финансовое будущее? Вот как мы двигаемся дальше.
+              Готовы начать сотрудничество с «Барингс»? Вот как мы двигаемся дальше.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <h4 className="font-semibold text-foreground text-lg">Немедленные действия</h4>
+                <h4 className="font-semibold text-foreground text-lg">Ближайшие действия</h4>
                 <ol className="space-y-4 text-base text-muted-foreground">
                   <li className="flex items-start space-x-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center mt-0.5 font-semibold">
                       1
                     </span>
                     <span className="leading-relaxed">
-                      Изучите это предложение и обсудите любые вопросы с Christopher
+                      Изучите предложение и обсудите ассортимент и объёмы с Ольгой Никитиной
                     </span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center mt-0.5 font-semibold">
                       2
                     </span>
-                    <span className="leading-relaxed">Подпишите договор и оплатите 200 000 ₽ за онбординг</span>
+                    <span className="leading-relaxed">Запросите бесплатные образцы продукции для дегустации</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center mt-0.5 font-semibold">
                       3
                     </span>
                     <span className="leading-relaxed">
-                      Назначьте вводную встречу со Stephanie для начала сбора данных
+                      Согласуйте условия и заключите договор поставки для первой отгрузки
                     </span>
                   </li>
                 </ol>
@@ -1343,22 +1336,22 @@ export default function ClientProposal() {
                   <div className="flex items-start space-x-3">
                     <DollarSign className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div className="leading-relaxed">
-                      <span className="font-semibold text-foreground">Оплата счёта:</span> Оплатите по ссылке Stripe
-                      выше или запросите реквизиты для банковского перевода
+                      <span className="font-semibold text-foreground">Оплата:</span> По счёту с предоплатой для
+                      первого заказа, далее возможна отсрочка платежа по договору
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <FileText className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div className="leading-relaxed">
-                      <span className="font-semibold text-foreground">Договор:</span> Договор на финансовое
-                      планирование будет отправлен через Adobe Sign для электронной подписи
+                      <span className="font-semibold text-foreground">Договор:</span> Договор поставки со
+                      спецификацией по ценам, объёмам и графику отгрузок
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div className="leading-relaxed">
-                      <span className="font-semibold text-foreground">Сроки:</span> Онбординг обычно занимает 4-6
-                      недель от первого платежа до доставки финального плана
+                      <span className="font-semibold text-foreground">Сроки:</span> От заявки до первой поставки
+                      обычно проходит 1-2 недели
                     </div>
                   </div>
                 </div>
@@ -1368,11 +1361,11 @@ export default function ClientProposal() {
             <div className="border-t pt-8">
               <div className="text-center space-y-3">
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Это предложение действительно 30 дней и отражает наш анализ на основе информации, предоставленной
-                  во время наших консультационных звонков с Шейном 15-18 октября 2025 года.
+                  Это коммерческое предложение действительно 30 дней. Цены и условия могут быть уточнены
+                  в зависимости от объёма, ассортимента и сезона.
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Подготовлено командой Meridian Wealth Partners - hello@example.com - 585-504-1616
+                  Подготовлено командой «Барингс» - info@barings.ru - +7 (861) 200-45-67
                 </p>
               </div>
             </div>
@@ -1382,78 +1375,76 @@ export default function ClientProposal() {
         {/* Additional Resources */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-xl sm:text-2xl">Дополнительные ресурсы</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl">Дополнительные возможности</CardTitle>
             <CardDescription className="text-base leading-relaxed">
-              Услуги и ресурсы с добавленной ценностью для наших клиентов
+              Сервисы и преимущества, которые «Барингс» предлагает партнёрам
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card 1: Monthly Newsletter */}
+              {/* Card 1: Catalog */}
               <Card className="border-2">
                 <CardHeader>
-                  <CardTitle className="text-lg">Ежемесячная рассылка</CardTitle>
+                  <CardTitle className="text-lg">Каталог продукции</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Доступ к нашей ежемесячной клиентской рассылке, о которой некоторые клиенты говорят, что она
-                    "сама по себе стоит наших услуг"
+                    Полный каталог свежемороженой продукции «Барингс» с фотографиями, фасовками, сроками годности
+                    и актуальным прайс-листом для оптовых партнёров
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Card 2: Discounts and Partners */}
+              {/* Card 2: Marketing Support */}
               <Card className="border-2">
                 <CardHeader>
-                  <CardTitle className="text-lg">Скидки и партнёры</CardTitle>
+                  <CardTitle className="text-lg">Маркетинговая поддержка</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Доступ к эксклюзивным скидкам и нашей сети проверенных партнёров, включая:
+                    Для партнёров доступны маркетинговые инструменты для роста продаж на полке:
                   </p>
                   <ul className="text-sm text-muted-foreground space-y-2">
-                    <li>- Monarch (бюджетирование)</li>
-                    <li>- Cloaked (приватность)</li>
-                    <li>- Encorestate Plans</li>
-                    <li>- Sora Finance</li>
-                    <li>- CardPointers</li>
+                    <li>- POS-материалы для торговых точек</li>
+                    <li>- Промоакции и совместные дегустации</li>
+                    <li>- Контент и фото для интернет-магазина</li>
+                    <li>- Брендирование под СТМ (Private Label)</li>
+                    <li>- Рецептуры и идеи блюд для покупателей</li>
                   </ul>
                 </CardContent>
               </Card>
 
-              {/* Card 3: Client Communications */}
+              {/* Card 3: Communications */}
               <Card className="border-2">
                 <CardHeader>
-                  <CardTitle className="text-lg">Клиентские коммуникации</CardTitle>
+                  <CardTitle className="text-lg">Информирование партнёров</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                    Будьте в курсе целевых обновлений по темам, которые важны для вас.
+                    Будьте в курсе новинок ассортимента, сезонных предложений и изменений в прайсе.
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Рассылки с релевантными обновлениями, например{" "}
-                    <span className="font-mono text-xs break-all">updates@example.com</span>
+                    Рассылка для оптовых клиентов:{" "}
+                    <span className="font-mono text-xs break-all">partner@barings.ru</span>
                   </p>
                 </CardContent>
               </Card>
 
-              {/* Card 4: Legal Information */}
+              {/* Card 4: Quality & Certificates */}
               <Card className="border-2">
                 <CardHeader>
-                  <CardTitle className="text-lg">Юридическая информация</CardTitle>
+                  <CardTitle className="text-lg">Качество и документы</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Meridian Wealth Partners LLC - зарегистрированный инвестиционный консультант, предоставляющий
-                    консультационные услуги и работающий в штате Нью-Йорк.
+                    «Барингс» — производитель свежемороженой продукции полного цикла. Производство работает по
+                    принципам ХАССП, продукция соответствует ГОСТ, ТУ и техническим регламентам ЕАЭС.
                   </p>
                   <a
-                    href="https://adviserinfo.sec.gov/firm/summary/310132"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="mailto:partner@barings.ru"
                     className="text-sm text-primary hover:text-primary/80 underline leading-relaxed break-words"
                   >
-                    Просмотреть Form ADV нашей компании
+                    Запросить сертификаты и декларации
                   </a>
                 </CardContent>
               </Card>
@@ -1465,11 +1456,11 @@ export default function ClientProposal() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Мы готовы ответить на любые вопросы и убедиться, что это партнёрство идеально соответствует вашим
-                    целям и ценностям.
+                    Мы готовы ответить на любые вопросы и подобрать ассортимент и условия, которые идеально подойдут
+                    вашему бизнесу.
                   </p>
                   <a
-                    href="mailto:hello@example.com"
+                    href="mailto:partner@barings.ru"
                     className="inline-flex items-center justify-center w-full min-h-[40px] text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2 transition-colors"
                   >
                     Напишите нам
@@ -1477,23 +1468,21 @@ export default function ClientProposal() {
                 </CardContent>
               </Card>
 
-              {/* Card 6: Blog */}
+              {/* Card 6: Samples */}
               <Card className="border-2">
                 <CardHeader>
-                  <CardTitle className="text-lg">Наш блог</CardTitle>
+                  <CardTitle className="text-lg">Образцы продукции</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Читайте наши последние материалы о финансовом планировании, инвестиционных стратегиях и
-                    комментарии к рынку.
+                    Закажите бесплатные образцы ассортимента «Барингс», чтобы оценить качество, вкус и внешний вид
+                    продукции перед началом поставок.
                   </p>
                   <a
-                    href="https://meridianwp.substack.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="mailto:partner@barings.ru"
                     className="inline-flex items-center justify-center w-full min-h-[40px] text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2 transition-colors"
                   >
-                    Перейти в блог
+                    Запросить образцы
                   </a>
                 </CardContent>
               </Card>
